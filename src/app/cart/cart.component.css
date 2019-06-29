@@ -1,0 +1,77 @@
+.container{
+    margin-top:30px;
+}
+.card{
+    padding:20px;
+    margin-top:10px;
+}
+#mycard{
+ margin-top:10px;
+} 
+.comments{
+    margin-top:10px;
+}
+.righticon{
+    float:right;
+}
+
+.far {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .far:hover {
+    color:red;
+  }
+  #send{
+      width: 25%;
+      border: none;
+      background: darkslategray;
+      color:white;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      cursor:pointer;
+      margin-top: 10px;
+      padding : 5px 20px;
+      border-radius: 27px;
+      box-shadow : 0 4px 8px rgba(0,0,0,0.12),
+                   0 2px 4px 0 rgba(0,0,0,0.08);
+  }
+ .input {
+ width:100%;
+ border:none;
+ background:rgba(0,0,0,0.08);
+ padding: 10px;
+ color: rgba(0,0,0,0.3);
+ font-size:14px;
+ font-weight:bold;
+ font-family:'Roboto condensed' , sans-serif;
+ border-radius: 15px;
+}
+#userName {
+    background-color: rgba(243, 242, 242, 0.835);
+}
+#userComments{
+    background-color: rgba(243, 242, 242, 0.835);
+}
+.mycomments{
+padding:5px;
+margin-bottom:10px;
+}
+.fa-trash-o{
+    margin-right:10px;
+}
+.btn-success{
+    background: darkslategray;
+    box-shadow : 0 4px 8px rgba(0,0,0,0.12),
+                   0 2px 4px 0 rgba(0,0,0,0.08);
+    border-radius:25px;
+}
+#userid{
+    display:none;
+}
+#leftCart{
+    margin-bottom:10px;
+}

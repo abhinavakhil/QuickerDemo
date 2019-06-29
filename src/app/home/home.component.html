@@ -1,0 +1,16 @@
+<h2 class="text-center"></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xl-4 col-md-4"  id="main" *ngFor="let p of products$ | async">
+        <div class="card h-100">
+            <img src="{{p.payload.val().imageUrl}}" class="card-img-top">
+            <div class="card-body">
+              <p class="text-center">
+                {{p.payload.val().title | uppercase}}
+            </p>
+            <button class="btn btn-primary btn-block"  [routerLink]="['/cart' , p.key]">Add To Cart <i class="fa fa-cart-plus" ></i></button>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

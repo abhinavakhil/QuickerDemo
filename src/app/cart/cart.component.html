@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" id="leftCart">
+          <img src="{{product.imageUrl}}" alt="loading..." class="card-img-top">
+          <hr>
+          <div class="card-body">
+            <h5 class="card-title ">{{product.title | titlecase}}
+                <span class="righticon" ><i class="fa fa-thumbs-up" (click)="changeColor(this)" style="font-size:24px" ></i></span>
+                <span class="righticon" (click)="delete()"><i class="fa fa-trash-o"></i></span>
+              </h5>
+            <p class="card-text">category: {{product.category}} </p>
+          </div>
+          <button type="button" class="btn btn-success">Buy Now</button>
+        </div>
+    </div>
+
+     <div class="col-md-6">
+     <div id="mycard">
+      <form (ngSubmit)="save(f.value)" #f="ngForm">
+        <div class="form-group">
+          <input type="text" placeholder="Your name" class="form-control" id="userName" name="userName" ngModel #userName="ngModel" required>
+        <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">
+          Enter your name
+        </div>
+        </div>
+        <div class="form-group">
+            <textarea type="text" placeholder="Your message" class="form-control" name="userComments" id="userComments" ngModel #userComments="ngModel" rows="5" required></textarea>
+            <div class="alert alert-danger" *ngIf="userComments.touched && userComments.invalid">
+              Comments is required!
+            </div>
+          </div>
+          <div class="form-group">
+             <input  type="text" placeholder="Your message" [(ngModel)]="id" class="form-control" name="userid" id="userid" ngModel #userid="ngModel" >
+            </div>
+         <button type="submit" class="btn" id="send" [disabled]="f.invalid"><i class="fa fa-rocket" style="font-size:24px;"></i></button>
+      </form>
+    </div>
+    <hr>
+      <!-- showing comments-->
+      <div *ngFor="let c of comments | async">
+          <div class="card mycomments" *ngIf="id === c.userid">
+              <p >
+                <img src="assets/1.png" width="50px"> 
+                {{c.userName}} : {{c.userComments}}
+               </p> 
+             </div>
+      </div>
+     </div>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+#main{
+    margin-top:20px;
+}
+.card{
+   margin-top:20px;
+}
+#leftcard{
+    padding:30px;
+}
+
+.btn{
+    background: darkslategray;
+    box-shadow : 0 4px 8px rgba(0,0,0,0.12),
+                   0 2px 4px 0 rgba(0,0,0,0.08);
+    border-radius:25px;
+}

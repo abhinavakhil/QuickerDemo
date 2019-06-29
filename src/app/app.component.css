@@ -1,0 +1,11 @@
+.navbar-brand{
+    color:rgb(35, 173, 35);
+}
+.nav-item .nav-link{
+    color:#fff;
+}
+.active{
+    background-color: rgba(49, 47, 47, 0.589);
+    margin:0px;
+    padding:0px;
+}

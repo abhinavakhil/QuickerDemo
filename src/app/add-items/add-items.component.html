@@ -1,0 +1,55 @@
+<div class="container" id="main">
+  <div class="row">
+    <div class="col-md-6" >
+      <div class="card" id="leftcard">
+        <form (ngSubmit)="submit(f.value)" #f="ngForm">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" placeholder="Item Name" id="title" name="title" ngModel  #title="ngModel" required>
+              <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+                Title is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" placeholder="Item Description" id="description" name="description" ngModel #description="ngModel" required> 
+              <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+                Description is required
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label for="category">category</label>
+              <select ngModel class="form-control" id="category" name="category" required #category="ngModel">
+                <option value="">categories</option>
+                <option *ngFor="let i of items$ | async" [value]="i.key">
+                  {{i.payload.val().name}}
+                </option>
+              </select>
+              <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+                Category is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="imageUrl">imageUrl</label>
+              <input type="text" class="form-control" id="imageUrl" name="imageUrl" ngModel  #imageUrl="ngModel" required>
+              <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+                ImageUrl is Required
+              </div>
+            </div>
+            <button class="btn btn-success" [disabled]="f.invalid">Add Items</button>
+          </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card" *ngIf="title.value">
+            <img [src]="imageUrl.value" alt="loading..." class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{title.value}}</h5>
+              <p class="card-text">{{description.value}}</p>
+            </div>
+          </div>
+    </div>
+  </div>
+  
+</div>
